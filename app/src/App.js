@@ -1,23 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './styles/App.css';
+import Axios from 'axios';
 
 function App() {
+  const [imgData, setImgData] = useState([]);
+
+  useEffect(() => {
+    Axios.defaults.headers.common['Authorization'] = `Client-ID ${process.env.REACT_APP_ACCESS_KEY}`
+    Axios.get("https://api.unsplash.com/photos/")
+      .then(res => {
+        console.log(res)
+        return res.data
+      })
+      .catch(err => {
+        console.log(err);
+      })
+      .then(data => {
+        setImgData(data)
+        console.log(data)
+      })
+
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {!imgData ? 
+        "loading..." 
+        :
+        imgData.map(img => { 
+          return <img id = {img.id} src = {img.urls.small} /> 
+         }) }
+         
+    
       </header>
     </div>
   );
