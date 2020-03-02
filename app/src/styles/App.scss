@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  // text-align: center;
 }
 
 .container {
@@ -21,6 +21,56 @@
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
+  position: relative;
+}
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0,.3);
+  .content {
+    padding: 5rem;
+    h1 {
+    
+    }
+    input[type=text] {
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      height: 40px;
+      font-size: 1.3rem;
+      padding-left: 1rem;
+      &::placeholder {
+        font-size: 1.3rem;
+        padding-left: .2rem;
+      }
+    }
+    .button-row {
+      margin-top: 1rem;
+      display: flex;
+      button {
+        font-size: 1rem;
+        color : white;
+        background-color: transparent;
+        border-radius: 5px;
+        margin-right: 5px;
+        padding: 5px;
+        transition: .5s;
+        &:hover {
+          background-color: white;
+          color : black;
+
+        }
+      }
+    }
+  }
+
+
 }
 
 img {
