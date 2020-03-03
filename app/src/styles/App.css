@@ -1,8 +1,30 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .container {
-  width: 100%;
-  max-width: 920px;
+  width: 1024px;
   margin: auto;
   padding: 0 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
 }
 
 .App-logo {
@@ -11,22 +33,19 @@
 }
 
 .banner {
-  height: 80vh;
+  height: 600px;
+  width: 100%;
   display: inline-block;
   overflow: hidden;
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .overlay {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -36,7 +55,17 @@
 }
 
 .overlay .content {
-  padding: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 8rem 10rem;
 }
 
 .overlay .content input[type=text] {
@@ -84,6 +113,8 @@
   padding: 5px;
   -webkit-transition: .5s;
   transition: .5s;
+  border-color: white;
+  border-width: thin;
 }
 
 .overlay .content .button-row button:hover {
@@ -93,23 +124,31 @@
 
 img {
   border-radius: 10px;
-  width: 100%;
+  max-width: 100%;
+  -ms-grid-column-align: stretch;
+      justify-self: stretch;
 }
 
 .gallery {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-  grid-gap: 20px;
+  -webkit-column-count: 3;
+          column-count: 3;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    -webkit-animation: App-logo-spin infinite 20s linear;
-            animation: App-logo-spin infinite 20s linear;
+.gallery .img-square {
+  margin-top: 10px;
+  padding-top: 0;
+  margin-bottom: 0px;
+  padding-bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .gallery {
+    -webkit-column-count: 2;
+            column-count: 2;
   }
 }
 

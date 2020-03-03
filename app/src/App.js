@@ -46,11 +46,11 @@ function App() {
   return (
     <div className="App container">
       <header className="App-header">
-        <div className="banner">
-          {!imgBanner ?
-            "loading..."
-            : <img src={imgBanner.urls.regular} alt={imgBanner.alt_description} />
-          }
+        <div className="banner" style= {{backgroundImage: (!imgBanner ? "" :`url(${imgBanner.urls.regular})`)}}>
+           {/* {!imgBanner ?
+          //   "loading..."
+          //   : <img src={imgBanner.urls.regular} alt={imgBanner.alt_description} />
+          // } */}
           <div className="overlay">
             <div className = "content">
             <h1>The coolest pics framed by the coolest people</h1>
@@ -70,7 +70,7 @@ function App() {
             "loading..."
             :
             imgList.map(img => {
-              return <img key={img.id} src={img.urls.small} alt={img.alt_description} />
+              return <img key={img.id} src={img.urls.small} alt={img.alt_description} className = "img-square"/>
             })}
         </div>
 
