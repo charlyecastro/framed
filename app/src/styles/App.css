@@ -60,33 +60,46 @@
   padding: 8rem 10rem;
 }
 
-.overlay .content input[type=text] {
+.overlay .content .input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.overlay .content .input-group input[type=text] {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 5px 0px 0px 5px;
   border: none;
-  height: 40px;
+  height: 50px;
   font-size: 1.3rem;
-  padding-left: 1rem;
+  padding: 10px;
 }
 
-.overlay .content input[type=text]::-webkit-input-placeholder {
+.overlay .content .input-group input[type=text]::-webkit-input-placeholder {
   font-size: 1.3rem;
-  padding-left: .2rem;
+  padding-left: .1rem;
 }
 
-.overlay .content input[type=text]:-ms-input-placeholder {
+.overlay .content .input-group input[type=text]:-ms-input-placeholder {
   font-size: 1.3rem;
-  padding-left: .2rem;
+  padding-left: .1rem;
 }
 
-.overlay .content input[type=text]::-ms-input-placeholder {
+.overlay .content .input-group input[type=text]::-ms-input-placeholder {
   font-size: 1.3rem;
-  padding-left: .2rem;
+  padding-left: .1rem;
 }
 
-.overlay .content input[type=text]::placeholder {
+.overlay .content .input-group input[type=text]::placeholder {
   font-size: 1.3rem;
-  padding-left: .2rem;
+  padding-left: .1rem;
+}
+
+.overlay .content .input-group button[type=submit] {
+  height: 50px;
+  background-color: white;
+  border: none;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .overlay .content .button-row {
@@ -102,7 +115,7 @@
   background-color: transparent;
   border-radius: 5px;
   margin-right: 5px;
-  padding: 5px;
+  padding: 10px;
   -webkit-transition: .5s;
   transition: .5s;
   border-color: white;
@@ -117,8 +130,13 @@
 img {
   border-radius: 10px;
   max-width: 100%;
-  -ms-grid-column-align: stretch;
-      justify-self: stretch;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+img:hover {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
 }
 
 .gallery {
@@ -166,21 +184,21 @@ img {
     -webkit-column-count: 2;
             column-count: 2;
   }
-}
-
-@media screen and (max-width: 768px) {
   .container {
     width: 100%;
   }
-  h1 {
-    font-size: 1.5rem;
+  .banner {
+    height: 400px;
   }
   .overlay .content {
     padding: 2rem;
   }
+  .overlay .content h1 {
+    font-size: 2rem;
+  }
   .overlay .content input[type=text] {
     width: 100%;
-    height: 35px;
+    height: 30px;
     font-size: 1rem;
     padding-left: .5rem;
   }
@@ -204,7 +222,10 @@ img {
 
 @media screen and (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 100%;
+  }
+  .overlay .content {
+    padding: 4rem;
   }
 }
 

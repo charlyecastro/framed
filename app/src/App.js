@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './styles/App.css';
 import Axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
   const [imgBanner, setImgBanner] = useState('');
@@ -50,7 +52,10 @@ function App() {
           <div className="overlay">
             <div className = "content">
             <h1>The coolest pics framed by the coolest people</h1>
+            <div className= "input-group">
             <input type="text" id="img" name="img" placeholder="Search for some pics"/>
+            <button type="submit"><FontAwesomeIcon icon={faSearch} size='2x' /></button>
+            </div>
             <div className="button-row">
               <button>New</button>
               <button>Popular</button>
