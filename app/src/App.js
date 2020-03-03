@@ -47,10 +47,6 @@ function App() {
     <div className="App container">
       <header className="App-header">
         <div className="banner" style= {{backgroundImage: (!imgBanner ? "" :`url(${imgBanner.urls.regular})`)}}>
-           {/* {!imgBanner ?
-          //   "loading..."
-          //   : <img src={imgBanner.urls.regular} alt={imgBanner.alt_description} />
-          // } */}
           <div className="overlay">
             <div className = "content">
             <h1>The coolest pics framed by the coolest people</h1>

@@ -9,24 +9,6 @@
   padding: 0 1.5rem;
 }
 
-@media (max-width: 768px) {
-  .container {
-    width: 100%;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -52,6 +34,16 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .overlay .content {
@@ -145,13 +137,6 @@ img {
   padding-bottom: 0;
 }
 
-@media only screen and (max-width: 768px) {
-  .gallery {
-    -webkit-column-count: 2;
-            column-count: 2;
-  }
-}
-
 .App-header {
   background-color: white;
   min-height: 100vh;
@@ -174,5 +159,58 @@ img {
 
 .App-link {
   color: #61dafb;
+}
+
+@media only screen and (max-width: 768px) {
+  .gallery {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  .overlay .content {
+    padding: 2rem;
+  }
+  .overlay .content input[type=text] {
+    width: 100%;
+    height: 35px;
+    font-size: 1rem;
+    padding-left: .5rem;
+  }
+  .overlay .content input[type=text]::-webkit-input-placeholder {
+    font-size: 1rem;
+    padding-left: 0;
+  }
+  .overlay .content input[type=text]:-ms-input-placeholder {
+    font-size: 1rem;
+    padding-left: 0;
+  }
+  .overlay .content input[type=text]::-ms-input-placeholder {
+    font-size: 1rem;
+    padding-left: 0;
+  }
+  .overlay .content input[type=text]::placeholder {
+    font-size: 1rem;
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
 }
 /*# sourceMappingURL=App.css.map */
