@@ -51,11 +51,11 @@ function App() {
       <header className="App-header">
         <nav className ="">
           <menu>
-          <a href ="/">Framed</a>
+          <a href ="https://charlyecastro.github.io/framed/">Framed</a>
           <ul>
-            <li><a href ="/">about</a></li>
-            <li><a href ="/">follow</a ></li>
-            <li><a href ="/">contact</a></li>
+            <li><a href ="https://charlyecastro.github.io/framed/">about</a></li>
+            <li><a href ="https://charlyecastro.github.io/framed/">follow</a ></li>
+            <li><a href ="https://charlyecastro.github.io/framed/">contact</a></li>
           </ul>
           </menu>
         </nav>
