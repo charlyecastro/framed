@@ -3,6 +3,7 @@ import './styles/App.css';
 import Axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import ImgCard from './components/imgCard.js'
 
 function App() {
   const [imgBanner, setImgBanner] = useState('');
@@ -18,7 +19,7 @@ function App() {
   const fetchImgList = (() => {
     Axios.get("https://api.unsplash.com/photos/")
       .then(res => {
-        console.log(res)
+        // console.log(res)
         return res.data
       })
       .catch(err => {
@@ -33,7 +34,7 @@ function App() {
   const fetchImgBanner = (() => {
     Axios.get("https://api.unsplash.com/photos/random")
       .then(res => {
-        console.log(res)
+        // console.log(res)
         return res.data
       })
       .catch(err => {
@@ -41,16 +42,26 @@ function App() {
       })
       .then(data => {
         setImgBanner(data)
-        console.log(data)
+        // console.log(data)
       })
   });
 
   return (
-    <div className="App container">
+    <div className="App ">
       <header className="App-header">
+        <nav className ="">
+          <menu>
+          <a href ="/">Framed</a>
+          <ul>
+            <li><a href ="/">about</a></li>
+            <li><a href ="/">follow</a ></li>
+            <li><a href ="/">contact</a></li>
+          </ul>
+          </menu>
+        </nav>
         <div className="banner" style= {{backgroundImage: (!imgBanner ? "" :`url(${imgBanner.urls.regular})`)}}>
           <div className="overlay">
-            <div className = "content">
+            <div className = "content container" >
             <h1>The coolest pics framed by the coolest people</h1>
             <div className= "input-group">
             <input type="text" id="img" name="img" placeholder="Search for some pics"/>
@@ -66,12 +77,12 @@ function App() {
            
           </div>
         </div>
-        <div className="gallery">
+        <div className="gallery container">
           {!imgList ?
             "loading..."
             :
             imgList.map(img => {
-              return <img key={img.id} src={img.urls.small} alt={img.alt_description} className = "img-square"/>
+              return <ImgCard img = {img.urls.small} key={img.id} alt = {img.alt_description} description = {img.description} username = {img.user.username} likes = {img.likes}/>
             })}
         </div>
 
